@@ -1,0 +1,21 @@
+<h1> Dashboard </h1>
+<h2> RISK levels </h2>
+<ul>
+    {% for key, val in context.risk_hist.iteritems()%}
+    <li> {{key}} : {{ val }} </li>
+    {% endfor %}
+</ul>
+
+<h2> ALERT counts</h2>
+<ul>
+    {% for alert in context.alerts %}
+    <li>{{ alert }}</li>
+    {% endfor %}
+</ul>
+
+<h2> TOP10 Vulnerable uris </h2>
+<ul>
+    {% for dict in context.top10_uris %}
+    <li>{{ dict }}</li>
+    {% endfor %}
+</ul>

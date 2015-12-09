@@ -1,0 +1,15 @@
+<h1> {{site}} </h1>
+<!--<select>
+    {% for date in dates %}
+       <option value="{{ date }}">{{ date }}</option>
+    {% endfor %}
+</select>-->
+<form action="{{url_for('home.dashboard')}}" method="post" name="selectscan">
+	  Site:<br>
+          {{ form.site(value=site) }}
+      <p>
+          Please select the scan:<br>
+          {{ form.date }}<br>
+      </p>
+      <p><input type="submit" value="Go"></p>
+</form>
