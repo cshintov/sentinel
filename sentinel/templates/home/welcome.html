@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 {% macro render_field(field, placeholder=None) %}
 {% if field.errors %}
 <div>
@@ -29,3 +31,4 @@
     <li><a href="{{ url_for('home.scanlist', site=site) }}">{{site}}</a><br>
   {% endfor %}
 </div>
+{% endblock %}

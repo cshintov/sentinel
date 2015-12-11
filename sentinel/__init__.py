@@ -3,12 +3,19 @@ from flask import Flask, render_template
 
 # Import MongoEngine
 from flask.ext.mongoengine import MongoEngine
+from flask.ext.login import LoginManager
+from sentinel.utils.session import MongoSessionInterface
 
 # Define the WSGI application object
 app = Flask(__name__)
 
+app.session_interface = MongoSessionInterface(db='sentinel_app')
+
+#flask-login setup
+login_manager = LoginManager()
+login_manager.init_app(app)
+
 # Configurations
-#app.config["MONGODB_SETTINGS"] = {'DB': "sentinel"}
 app.config.from_object('config')
 
 # Define the database object which is imported

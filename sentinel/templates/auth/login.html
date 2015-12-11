@@ -1,3 +1,4 @@
+{% block content %}
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 {% macro render_field(field, placeholder=None) %}
 {% if field.errors %}
@@ -34,7 +35,7 @@
     {% endfor %}
     </div>
     {% endif %}
-    <form method="POST" action="." accept-charset="UTF-8" role="form">
+    <form method="POST" action="#" accept-charset="UTF-8" role="form">
       {{ form.csrf_token }}
       {{ render_field(form.username, placeholder="Your User Name",
                                   autofocus="") }}
@@ -49,3 +50,4 @@
     </form>  
   </div>
 </div>
+{% endblock %}

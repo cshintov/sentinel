@@ -1,0 +1,10 @@
+{% if current_user.is_authenticated%}
+    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+{% endif %}
+{% if not current_user.is_authenticated%}
+    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+{% endif %}
+
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
